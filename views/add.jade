@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1= title
+    form.new_lecture(name="input", action="/create", method="post")
+        p.top
+            label.larger Class
+            input#class_name(type="text", name="class_name")
+        p
+            label.larger Lecture Title
+            input#title(type="text", name="title")
+        p
+            label.larger URL
+            input#url(type="text", name="url")
+        button.btn.btn-success(type="submit") Add Lecture

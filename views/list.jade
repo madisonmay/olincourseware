@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1= title
+    div
+        each lecture in lectures
+            p
+                a.big(href="/lecture/#{lecture.title}") #{lecture.class_name}: #{lecture.title}
