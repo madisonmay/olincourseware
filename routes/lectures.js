@@ -29,7 +29,7 @@ exports.lecture = function(req, res){
             var id = url[1];
             var title = lecture.class_name + ': ' + lecture.title
             console.log(id);
-            res.render('index', { title: 'Olin Courseware', lecture: lecture, url: id, title: title });
+            res.render('index', { title: 'Olin Lectures', lecture: lecture, url: id, title: title });
         }
   });
 };
