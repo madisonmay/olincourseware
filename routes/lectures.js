@@ -5,8 +5,15 @@
  var models = require("../models");
  var Lecture = models.Lecture
 
+ Array.prototype.sortByProp = function(p){
+ return this.sort(function(a,b){
+  return (a[p] > b[p]) ? 1 : (a[p] < b[p]) ? -1 : 0;
+ });
+}
+
 exports.list = function(req, res){
     Lecture.find({}, function(err, lectures) {
+        lectures = lectures.sortByProp('time');
         res.render('list', {title: 'Recent Lectures', lectures: lectures});
     })
 };
