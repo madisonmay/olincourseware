@@ -52,3 +52,7 @@ exports.create = function(req, res) {
         res.redirect('/add');
     })
 }
+
+exports.home = function(req, res) {
+    res.render('home', {title: 'Olin Lectures'});
+}

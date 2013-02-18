@@ -15,6 +15,7 @@ head
       }
 
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css", rel="stylesheet")
     script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js")
     script(src="http://d3js.org/d3.v3.min.js")
@@ -39,10 +40,10 @@ head
             span.icon-bar
             span.icon-bar
           a.brand(href='/') Olin Lectures
-          //- .nav-collapse.collapse
-          //-   ul.nav
-          //-     li.active
-          //-       a(href='#') Home
+          .nav-collapse.collapse
+            ul.nav
+              li.active
+                a(href='/lectures') Browse Lectures
           //-     li
           //-       a(href='#about') About
           //-     li

@@ -24,3 +24,12 @@ a {
 .big {
     font-size: 20px;
 }
+
+.logo {
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+.down {
+    margin-top: 80px;
+}

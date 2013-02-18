@@ -30,10 +30,11 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', lectures.list);
+app.get('/', lectures.home);
 app.get('/lecture/:title', lectures.lecture);
 app.get('/add', lectures.add);
-app.post('/create', lectures.create)
+app.post('/create', lectures.create);
+app.get('/lectures', lectures.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
