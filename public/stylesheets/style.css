@@ -49,14 +49,14 @@ a {
   color: #004A7F;
 }
 
-.title {
-  color: #004A7F;
-}
-
-a {
+a.title {
   color: #004A7F;
 }
 
 a:focus {
+  color: #004A7F;
+}
+
+li.active{
   color: #004A7F;
 }
