@@ -1,9 +1,9 @@
 extends layout
 
 block content
-    div.logo
-        img(src="http://i.imgur.com/th1S5Bd.png")
-    div
-        each lecture in lectures
-            p
-                a.big(href="/lecture/#{lecture.title}") #{lecture.class_name}: #{lecture.title}
+  div.logo
+    img(src="images/TransparentBackground.png")
+  div
+    each lecture in lectures
+      p
+        a.big(href="/lecture/#{lecture.title}") #{lecture.class_name}: #{lecture.title}

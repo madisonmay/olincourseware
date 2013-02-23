@@ -1,3 +1,6 @@
+html {
+}
+
 body {
   text-align: center;
   padding: 50px;
@@ -9,7 +12,7 @@ a {
 }
 
 .video {
-    margin-top: 100px;
+    margin-top: 25px;
 }
 
 .top {
@@ -23,13 +26,37 @@ a {
 
 .big {
     font-size: 20px;
+    color: #004A7F;
 }
 
 .logo {
+    margin-top: 25px;
     margin-left: 500px;
     margin-right: 500px;
 }
 
 .down {
     margin-top: 80px;
+}
+
+.navbar {
+  background-color: black;
+  color: #004A7F;
+}
+
+.navbar-inner {
+  background-color: black;
+  color: #004A7F;
+}
+
+.title {
+  color: #004A7F;
+}
+
+a {
+  color: #004A7F;
+}
+
+a:focus {
+  color: #004A7F;
 }

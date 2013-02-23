@@ -9,6 +9,16 @@ var lectureSchema = mongoose.Schema({
     time: Number
 });
 
+var classSchema = mongoose.Schema({
+    class_name: String,
+    office_hours: String,
+    photo: String,
+    professors: String,
+    prerequisites: String
+});
+
 var Lecture = mongoose.model('Lecture', lectureSchema);
+
+var Class = mongoose.model('Class', classSchema);
 
 exports.Lecture = Lecture;
