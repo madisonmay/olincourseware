@@ -11,7 +11,7 @@ Array.prototype.sortByProp = function(p) {
 };
 
 exports.login = function(req, res) {
-    res.redirect('http://olinapps.com/external?callback=http://olin-lectures.herokuapp.com/login')
+    res.redirect('http://olinapps.com/external?callback=http://olin-lectures.herokuapp.com/')
 }
 
 exports.list = function(req, res) {
