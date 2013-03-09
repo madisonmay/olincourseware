@@ -17,6 +17,13 @@ var classSchema = mongoose.Schema({
     prerequisites: String
 });
 
+var userSchema = mongoose.Schema({
+    uid: String,
+    name: String
+})
+
+var User = mongoose.model('User', userSchema);
+
 var Lecture = mongoose.model('Lecture', lectureSchema);
 
 var Class = mongoose.model('Class', classSchema);

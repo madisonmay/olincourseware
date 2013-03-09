@@ -11,7 +11,7 @@ Array.prototype.sortByProp = function(p) {
 };
 
 exports.login = function(req, res) {
-    res.redirect('http://olinapps.com/external?callback=http://olin-lectures.herokuapp.com/home')
+    res.redirect('http://olinapps.com/external?callback=http://localhost:3000/home')
 }
 
 exports.list = function(req, res) {
@@ -72,7 +72,14 @@ exports.create = function(req, res) {
 };
 
 exports.home = function(req, res) {
+    req.session.uid = req.body.sessionid;
+    console.log(req.session.uid);
     res.render('home', {
-        title: 'Olin Lectures'
+        title: 'Olin Lectures',
+        uid: "'" + req.session.uid + "'",
     });
 };
+
+exports.userdata = function(req, res) {
+    console.log("Userdata")
+}

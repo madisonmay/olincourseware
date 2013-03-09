@@ -32,6 +32,7 @@ app.configure('development', function(){
 
 app.get('/', lectures.login);
 app.get('/home', lectures.home);
+app.get('/userdata', lectures.userdata)
 app.post('/home', lectures.home);
 app.get('/lecture/:title', lectures.lecture);
 app.get('/add', lectures.add);
