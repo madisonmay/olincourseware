@@ -30,7 +30,9 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', lectures.home);
+app.get('/', lectures.login);
+app.get('/home', lectures.home);
+app.post('/home', lectures.home);
 app.get('/lecture/:title', lectures.lecture);
 app.get('/add', lectures.add);
 app.post('/create', lectures.create);
