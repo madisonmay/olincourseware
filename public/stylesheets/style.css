@@ -1,8 +1,11 @@
+* {
+  border: 1px solid black;
+}
+
 html {
 }
 
 body {
-  text-align: center;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -59,4 +62,8 @@ a:focus {
 
 li.active{
   color: #004A7F;
+}
+
+.centered{
+  text-align: center;
 }

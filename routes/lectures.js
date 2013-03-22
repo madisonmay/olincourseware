@@ -40,7 +40,7 @@ exports.lecture = function(req, res) {
             var id = url[1];
             var title = lecture.class_name + ': ' + lecture.title;
             console.log(id);
-            res.render('index', {
+            res.render('lecture', {
                 title: 'Olin Lectures',
                 lecture: lecture,
                 url: id

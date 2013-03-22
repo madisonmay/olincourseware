@@ -3,7 +3,7 @@ extends layout
 block content
   div.logo
     img(src="images/TransparentBackground.png")
-  div
+  div.centered
     each lecture in lectures
       p
         a.big(href="/lecture/#{lecture.title}") #{lecture.class_name}: #{lecture.title}
