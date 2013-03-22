@@ -1,8 +1,12 @@
 /*
  * GET users listing.
  */
+
+
+var request = require("request");
 var models = require("../models");
 var Lecture = models.Lecture;
+var User = models.User;
 
 Array.prototype.sortByProp = function(p) {
     return this.sort(function(a, b) {
@@ -11,7 +15,7 @@ Array.prototype.sortByProp = function(p) {
 };
 
 exports.login = function(req, res) {
-    res.redirect('http://olinapps.com/external?callback=http://olin-lectures.herokuapp.com/home')
+    res.redirect('http://olinapps.com/external?callback=http://localhost:3000/home')
 }
 
 exports.list = function(req, res) {
@@ -74,12 +78,36 @@ exports.create = function(req, res) {
 exports.home = function(req, res) {
     req.session.uid = req.body.sessionid;
     console.log(req.session.uid);
-    res.render('home', {
-        title: 'Olin Lectures',
-        uid: "'" + req.session.uid + "'",
-    });
+    request({uri: 'http://directory.olinapps.com/api/me?sessionid='+req.session.uid},
+        function(error, response, body) {
+            body = JSON.parse(body);
+            name = body.name;
+            uid = body.id;
+            User.findOne({uid: uid}, function(err, db_user) {
+                if (err) {
+                    console.log(err);
+                } else if (db_user) {
+                    user = db_user
+                    console.log("User exists")
+                    res.render('home', {title: 'Olin Lectures', user: user});
+                } else {
+                    console.log("New user created")
+                    var new_user = new User({uid: uid, name: name});
+                    new_user.save(function(err) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            res.render('home', {title: 'Olin Lectures', user: new_user});
+                        }
+                    })
+                }
+            })
+        });
 };
 
-exports.userdata = function(req, res) {
-    console.log("Userdata")
-}
+exports.notes = function(req, res) {
+    console.log("Notes")
+    res.render('notes', {title: "Lecture Notes"});
+};
+
+

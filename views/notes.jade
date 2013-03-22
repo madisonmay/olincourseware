@@ -1,0 +1,31 @@
+extends layout
+
+
+block scripts
+
+    script(type="text/javascript")
+
+        function openFilePicker() {
+
+            filepicker.pick({
+                mimetypes: ['image/*', 'text/plain'],
+                container: 'window',
+                services:['COMPUTER', 'FACEBOOK', 'GMAIL', 'DROPBOX'],
+              },
+              function(FPFile){
+                console.log(JSON.stringify(FPFile));
+              },
+              function(FPError){
+                console.log(FPError.toString());
+              }
+            );
+        }
+
+        $(document).ready(function(){
+            filepicker.setKey('ApyAqLqVNTqO5MniAfHzcz');
+        });
+
+
+block content
+    div.
+        <input type="filepicker-dragdrop" data-fp-multiple="true"/>

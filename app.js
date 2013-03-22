@@ -32,12 +32,12 @@ app.configure('development', function(){
 
 app.get('/', lectures.login);
 app.get('/home', lectures.home);
-app.get('/userdata', lectures.userdata)
 app.post('/home', lectures.home);
 app.get('/lecture/:title', lectures.lecture);
 app.get('/add', lectures.add);
 app.post('/create', lectures.create);
 app.get('/lectures', lectures.list);
+app.get('/notes', lectures.notes);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

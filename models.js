@@ -29,3 +29,5 @@ var Lecture = mongoose.model('Lecture', lectureSchema);
 var Class = mongoose.model('Class', classSchema);
 
 exports.Lecture = Lecture;
+exports.User = User;
+exports.Class = Class;
