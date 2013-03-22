@@ -1,5 +1,5 @@
 * {
-  /*border: 1px solid black;*/
+  border: 1px solid black;
 }
 
 html {
@@ -15,7 +15,10 @@ a {
 }
 
 .video {
-    margin-top: 25px;
+    padding-top: 0px;
+    margin-right: 40%;
+    margin-left: 0%;
+    float: left;
 }
 
 .top {
@@ -66,4 +69,12 @@ li.active{
 
 .centered{
   text-align: center;
+}
+
+.comment{
+  text-align: left;
+  margin-top: 5%;
+  margin-left: 50%;
+  float: right;
+  width: 35%;
 }
